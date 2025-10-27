@@ -1,52 +1,49 @@
-import three from "../assets/three.jpg"
-import four from "../assets/four.jpg"
-import five from "../assets/five.jpg"
-import six from "../assets/six.jpg"
-import chatbot from "../assets/eig.jpg"
-import java from "../assets/java.jpg"
+
+import rolesim from "../assets/rolesim.webp"
+import speech from "../assets/speech.webp"
+import micro from "../assets/micro.webp"
+import surge from "../assets/surge.webp"
+import logistic from "../assets/logistic.webp"
+import creative from "../assets/creative.webp"
+
 const ProjectCardData = [
+{
+    imgsrc: rolesim, 
+    title: "RoleSim: Job-Aware Multi-Agent Interview System",
+    text: "Built a production-grade Generative-AI interview platform using Next.js, integrating Server-Sent Events (SSE) for real-time streaming of LLM responses.The system features a modular, DRY architecture for scalability and uses Retrieval-Augmented Generation (RAG) via Supabase pgvector and OpenAI GPT-4 for dynamic, context-aware questioning. [cite_start]It utilizes a multi-agent workflow (Interviewer, Evaluator, Tutor) with LangChain/LangGraph concepts and Neo4j for competency mapping and personalized feedback.",
+    view: "https://github.com/Ritik-rik/RoleSim" 
+},
+{
+    imgsrc: micro, 
+    title: "Microservices: Based Order & User Management System",
+    text: "Built an Order & User Management System using Spring Boot REST APIs, adhering to a scalable and modular microservices design.It integrated Kafka for event-driven communication between the services, was containerized with Docker, and deployed on OpenShift.Implemented distributed tracing with Spring Boot, Sleuth, and Zipkin to enable end-to-end visibility and reduce debugging time by 40%.",
+    view: "https://github.com/Ritik-rik/Microservices-Project" 
+},
     {
-        imgsrc: chatbot,
-        title:"AI Chatbot for Natural Language Processing",
-        text:"I led the development of an AI-powered chatbot designed to facilitate natural language conversations and provide answers to user queries. The goal was to create an interactive and intelligent virtual assistant.As the primary developer, I was responsible for designing the chatbot's architecture, implementing natural language processing algorithms, and integrating the OpenAI GPT-3 API. I also managed the user interface design and user experience.",
-        view:"https://github.com/Ritik-rik/GPT-AI"
-    },
-    {
-        imgsrc: java,
+        imgsrc: speech,
         title:"Speech Ease",
         text:"Created a text-to-speech Android app with emoji-to-speech messaging, language support (English/French), and contextual templates for simple daily communication has empowered silent persons.Created a Java-based Android app with 3 app features in collaboration at an acceptable cost. As a developer on an 8-person team, I made a substantial contribution as a Developer.Employing encryption and data anonymization, Managed a database with more than 10,000 records using Firebase's backend services.",
         view:"https://github.com/Ritik-rik/SpeechEaseM"
     },
     {
-        imgsrc: three,
-        title:"Internship Fair e-Cell",
-        text:"Internship Fair e-Cell is providing you with top-notch internships in a vast range of domains that include digital marketing, finance, web technology, content writing, and many more. Being a part of these internships would enhance your CV, help in building your network, boost up your confidence, and could even help in getting a job directly.",
-        view:"https://github.com/RitikWorkOld/InternshipFaire-Cell"
-    },
-    {
-        imgsrc: four,
-        title:"Endeavour'21",
-        text:"E-Summit is a dynamic platform that serves to inspire ideation and what entrepreneurial acumen one might possess via a plethora of competitive events, and speaker sessions given by an accomplished roster of speakers.The expertise and knowledge of such young and dynamic minds like you would add great value to the business sense of one and all, especially the budding entrepreneurs of the country who require guidance and path-breaking ideas to lead their way through the tough competition in the global market.",
-        view:"https://github.com/Parneet-Raghuvanshi/Endeavour-21"
-    },
-    {
-        imgsrc: five,
-        title:"Social Dukan",
-        text:"App consists of 5 bottom navigation Buttons in which Students can apply for the Events, Internships, Influencers. It consists of Paytm Payment Gateway, Notification Panel, Chat-Bot. Users can see/update their profile.User can avail Internships in easiest way.",
-        view:"https://github.com/RitikWorkOld/SocialDukan"
-    },
-    { 
-        imgsrc: six,
-        title:"Social Dukan Admin",
-        text:"The work can be described as it has 2 functions, Admin and Employer.In this application, Employers register on the app and the admin's role is to Post Events, Accept or Reject the profiles, Internships, Influencers which will show in Student's App.",
-        view:"https://github.com/RitikWorkOld/SocialDukanAdmin"
-    },
-    {
-        imgsrc: six,
-        title:"Endeavour'20'",
-        text:"It is an app of our college event where participants can signup for different sub-events and can grab the opportunity to take part in the events.Includes Notification, Paytm Payment GatewayI used Java with Firebase DB in this project",
-        view:"https://github.com/RitikWorkOld/Endeavour"
-    },
+    imgsrc: surge,  
+    title: "Algorithmic Pricing Loophole Simulator: The Surge Floor Fix",  
+    text: "Developed an interactive simulation to expose and fix a real-world pricing loophole seen in major ride-sharing platforms. Built a dynamic HTML + Tailwind + JavaScript web simulator with adjustable surge variables and visual fare charts. Designed Python backend logic (fare_calculator.py) to demonstrate the flawed vs. fixed pricing algorithm using Surge Floor, preventing price collapse during peak hours.",  
+    view: "https://github.com/ritikrikm/pricing-loophole-simulator"
+},
+{
+    imgsrc: logistic,  
+    title: "Logistic Project",  
+    text: "Built a full-stack logistics management platform with a React + Node.js architecture. Implemented client-server communication, optimized routes, and streamlined contact management features. Designed modular frontend and backend structure with reusable components, delivering a stable, production-ready solution for logistics automation.",  
+    view: "https://github.com/ritikrikm/logistic-project"
+},
+{
+    imgsrc: creative,  
+    title: "TheCreativeBud E-commerce Website",  
+    text: "Created an end-to-end e-commerce web app using HTML, CSS, and JavaScript with Firebase backend. Implemented real-time data synchronization, secure authentication, and a smooth product browsing experience. Configured CI/CD build scripts for optimized deployment, ensuring high performance and scalability.",  
+    view: "https://github.com/Ritik-rik/TheCreativeBud"
+}
+
 ];
 
 export default ProjectCardData

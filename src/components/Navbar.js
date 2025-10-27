@@ -1,39 +1,50 @@
+import React, { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
-import "./NavbarStyle.css";
 import { FaBars, FaTimes } from "react-icons/fa";
-import React, { useState } from "react";
+import "./NavbarStyle.css";
 
 const Navbar = () => {
   const [click, setClick] = useState(false);
-  
-  // Handle clicking the hamburger menu
+  const [color, setColor] = useState(false);
+
+  // Function to smoothly scroll to the top and close the mobile menu
+  const scrollToTop = () => {
+    setClick(false); // Close the mobile menu
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  // Toggle the mobile menu state and scroll to the top (primarily for mobile view)
   const handleClick = () => {
     setClick(!click);
-    window.scrollTo({ top: 0, behavior: "smooth" }); // Scroll to top when menu is toggled
+    // Optional: Keep scrolling to top on toggle, though closing on link click is more standard.
+    // window.scrollTo({ top: 0, behavior: "smooth" }); 
   };
 
   // Change the header background color based on scroll position
-  const [color, setColor] = useState(false);
-  const changeColor = () => {
+  const changeColor = useCallback(() => {
     if (window.scrollY >= 100) {
       setColor(true);
     } else {
       setColor(false);
     }
-  };
-  window.addEventListener("scroll", changeColor);
+  }, []); // useCallback ensures the function reference is stable
 
-  // Scroll to the top when a menu item is clicked
-  const scrollToTop = () => {
-    setClick(false); // Close the menu
-    window.scrollTo({ top: 0, behavior: "smooth" }); // Smoothly scroll to the top
-  };
+  // Attach and clean up the scroll event listener
+  useEffect(() => {
+    window.addEventListener("scroll", changeColor);
+
+    // Cleanup function to remove the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("scroll", changeColor);
+    };
+  }, [changeColor]);
 
   return (
     <div className={color ? "header header-bg" : "header"}>
       <Link to="/" onClick={scrollToTop}>
         <h1>Ritik Mehta</h1>
       </Link>
+
       <ul className={click ? "nav-menu active" : "nav-menu"}>
         <li>
           <Link to="/" onClick={scrollToTop}>Home</Link>
@@ -51,11 +62,13 @@ const Navbar = () => {
           <Link to="/contact" onClick={scrollToTop}>Contact</Link>
         </li>
       </ul>
+
+      {/* Hamburger menu icon, only visible on mobile */}
       <div className="hamburger" onClick={handleClick}>
         {click ? (
-          <FaTimes size={20} style={{ color: "#fff" }} />
+          <FaTimes size={20} style={{ color: "#fff" }} aria-label="Close Menu" />
         ) : (
-          <FaBars size={20} style={{ color: "#fff" }} />
+          <FaBars size={20} style={{ color: "#fff" }} aria-label="Open Menu" />
         )}
       </div>
     </div>

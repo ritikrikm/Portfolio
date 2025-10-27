@@ -7,8 +7,7 @@ import Contact from "./routes/Contact"
 import Experience from "./routes/Experience"
 import { Route, Routes } from "react-router-dom";
 import HomeSelector from './components/HomeSelector';
-import Home1 from './routes/Home1';      // Recruiter
-
+import Recruiter from './components/Recruiter/Recruiter';
 function App() {
   return (
   <>
@@ -16,7 +15,7 @@ function App() {
     {/* Netflix-style landing page */}
     <Route path="/" element={<HomeSelector />} />
     {/* Recruiter route */}
-    <Route path="/home1" element={<Home1 />} />
+    <Route path="/home1" element={<Recruiter />} />
     <Route path="/home" element={<Home/>} /> 
     <Route path="/project" element={<Project/>} /> 
     <Route path="/about" element={<About/>} /> 

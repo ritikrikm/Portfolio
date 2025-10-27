@@ -1,9 +1,8 @@
 import "./HeroImgStyle.css";
 import React, { useEffect, useState, useMemo } from "react";
 import { Link } from "react-router-dom";
-//import GitHubContributions from "./GithubContributions";
+import GitHubContributions from "./GithubContributions";
 import { FaLinkedin, FaGithub, FaFileDownload } from "react-icons/fa";
-// import GitHubCalendar from "github-calendar"; // Commented out
 
 const Heroimg = () => {
   const [displayText, setDisplayText] = useState("");
@@ -88,7 +87,7 @@ const Heroimg = () => {
           </a>
         </div>
 
-        {/*<GitHubContributions /> */}
+       <GitHubContributions id="home-calendar" username="ritikrikm" />
       </div>
     </div>
   );

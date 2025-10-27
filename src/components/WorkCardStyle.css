@@ -1,70 +1,135 @@
 .project-heading {
-    text-align: center;
-    padding: 4rem 0 2rem 0;
+  text-align: center;
+  padding: 4rem 0 2rem 0;
 }
 
-.project-container {
-    max-width: 1140px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 40px;
-    padding-bottom: 5rem;
+.morph-grid-container {
+  display: grid;
+  width: 90%;
+  max-width: 1200px;
+  aspect-ratio: 16 / 10; /* Keep a dynamic aspect ratio */
+  margin: 2rem auto 4rem auto;
+  gap: 12px;
+  animation: morph 20s infinite alternate linear; /* Apply the morph animation */
+  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.3);
+  border-radius: 16px;
+  transition: all 0.2s ease-out; /* Smooth hover effect */
 }
 
-.project-card {
-    background: #1a1919;
-    padding: 1.2rem 1rem;
-    text-align: center;
-    position: relative;
-    overflow: hidden; /* Ensure the content stays within the card */
+.morph-grid-container:hover {
+  animation-play-state: paused; /* Pause animation on hover */
+}
+
+.morph-tile {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  position: relative;
+  will-change: transform; /* Performance optimization for animations */
+}
+
+/* Define grid areas for the 6 tiles */
+.morph-tile.tile-1 { grid-area: a; }
+.morph-tile.tile-2 { grid-area: b; }
+.morph-tile.tile-3 { grid-area: c; }
+.morph-tile.tile-4 { grid-area: d; }
+.morph-tile.tile-5 { grid-area: e; }
+.morph-tile.tile-6 { grid-area: f; }
+
+
+.project-link-wrapper {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+}
+
+.morph-tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.project-link-wrapper:hover img {
+  transform: scale(1.05); /* Slight zoom on image hover */
+}
+
+.project-details-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(
+    to top, 
+    rgba(0, 0, 0, 0.95) 0%, 
+    rgba(0, 0, 0, 0.7) 50%, 
+    rgba(0, 0, 0, 0) 100%
+  );
+  padding: 1.5rem 1rem 1rem 1rem;
+  box-sizing: border-box;
+  color: #fff;
+  transition: all 0.3s ease;
 }
 
 .project-title {
-    color: #fff;
-    padding: 1rem 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1d4ed8; /* Retained this blue for headings */
+  margin: 0 0 0.5rem 0;
 }
 
-.project-card img {
-    width: 100%;
-    display: block;
-    margin: 0 auto;
+.project-text {
+  font-size: 0.9rem;
+  color: #e0e0e0;
+  margin: 0;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
 }
 
-.pro-details p {
-    padding-bottom: 1rem;
-    font-size: 1rem;
-    text-align: justify;
-    margin-bottom: 1rem; /* Add margin at the bottom of the description */
-}
+/* --- MORPHING ANIMATION FOR 6 TILES --- */
+@keyframes morph {
+  /* Layout 1: Initial State - Mixed sizes */
+  0% {
+    grid-template-columns: 1.5fr 1fr 1.5fr;
+    grid-template-rows: 1.5fr 1fr 1.5fr;
+    grid-template-areas:
+      "a a b"
+      "c d b"
+      "c e f";
+  }
 
-.pro-btns {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end; /* Align buttons to the bottom of the card */
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: 10px; /* Add margin to create space between buttons and the card */
-}
+  /* Layout 2: Intermediate state - More balanced */
+  33% {
+    grid-template-columns: 1fr 1.5fr 1fr;
+    grid-template-rows: 1fr 1.5fr 1fr;
+    grid-template-areas:
+      "a a b"
+      "d c c"
+      "d e f";
+  }
 
-.pro-btns .btn {
-    padding: 0.5rem 1rem;
-}
+  /* Layout 3: Another intermediate state */
+  66% {
+    grid-template-columns: 1fr 1fr 1.5fr;
+    grid-template-rows: 1.5fr 1fr 1fr;
+    grid-template-areas:
+      "a b b"
+      "a c d"
+      "e f d";
+  }
 
-.pro-btns .btn-left {
-    order: 1;
-}
-
-.pro-btns .btn-right {
-    order: 2;
-}
-
-@media screen and (max-width: 740px) {
-    .project-container {
-        max-width: 90%;
-        margin: auto;
-        grid-template-columns: 1fr;
-    }
+  /* Layout 4: Final State (same as 0% for smooth loop if alternate is removed) */
+  100% {
+    grid-template-columns: 1.5fr 1fr 1.5fr;
+    grid-template-rows: 1.5fr 1fr 1.5fr;
+    grid-template-areas:
+      "a a b"
+      "c d b"
+      "c e f";
+  }
 }

@@ -1,0 +1,197 @@
+/* --- Card Container --- */
+.github-card {
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin: 1.5rem auto;
+  width: 90%;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+  transition: background 0.3s, color 0.3s;
+  
+ 
+  background-color: #000000;  
+  border: 1px solid #ffffff;    
+  color: #ffffff;           
+}
+
+.github-title {
+  text-align: center;
+  font-weight: 700;
+  color: #ffffff;            
+  margin-bottom: 1rem;
+}
+
+/* --- Calendar Layout --- */
+.calendar {
+  display: flex;
+  justify-content: center;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+}
+
+.calendar svg {
+  max-width: 100%;
+  height: auto;
+  background: transparent !important;
+}
+
+/* --- Month & Weekday Labels --- */
+.calendar .ContributionCalendar-label span[aria-hidden="true"] {
+  color: #ffffff !important;   
+  font-weight: 600;
+  font-size: 12px;
+  transition: color 0.3s ease;
+}
+
+/* --- Skip Link (“Skip to contributions year list”) --- */
+.calendar a[href*="year-link"] {
+  display: inline-block;
+  color: #ffffff !important;    
+  background: transparent !important;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 500;
+  opacity: 0.8;
+  transition: color 0.3s, opacity 0.3s;
+}
+
+.calendar a[href*="year-link"]:hover {
+  opacity: 1;
+  color: #ffffff !important;   
+}
+
+/* --- Rect squares (Data colors) --- */
+
+.calendar rect.ContributionCalendar-day {
+  stroke: none !important;
+}
+
+/* --- Tooltip --- */
+.calendar .ContributionCalendar-tooltip {
+  background: #000000 !important;
+  color: #ffffff !important;    
+  border: 1px solid #ffffff !important;
+  border-radius: 4px;
+  font-size: 11px;
+}
+
+/* --- LIGHT MODE OVERRIDE (only if site switched) --- */
+:not(.dark) .github-card {
+  background-color: #ffffff;  
+  border: 1px solid #000000; 
+  color: #000000;           
+}
+
+:not(.dark) .github-title {
+  color: #000000;             
+}
+
+:not(.dark) .calendar .ContributionCalendar-label span[aria-hidden="true"],
+:not(.dark) .calendar a[href*="year-link"] {
+  color: #000000 !important;     
+}
+
+:not(.dark) .calendar .ContributionCalendar-tooltip {
+  background: hsl(0, 0%, 100%) !important; 
+  color: #000000 !important;      
+  border-color: #000000 !important;
+}
+/*
+ * --- GITHUB COMMIT COLOR OVERRIDES (REVISED) ---
+ * Target the TD element based on data-level
+*/
+
+
+/* Level 1 (Lightest Blue) */
+.calendar td.ContributionCalendar-day[data-level="1"] {
+  background-color: #A7D9F8 !important; /* Light Sky Blue */
+}
+.calendar td.ContributionCalendar-day[data-level="1"] rect {
+  fill: #A7D9F8 !important; 
+}
+
+/* Level 2 (Medium Light Blue) */
+.calendar td.ContributionCalendar-day[data-level="2"] {
+  background-color: #6DB3E1 !important; /* Medium Blue */
+}
+.calendar td.ContributionCalendar-day[data-level="2"] rect {
+  fill: #6DB3E1 !important;
+}
+
+/* Level 3 (Medium Dark Blue) */
+.calendar td.ContributionCalendar-day[data-level="3"] {
+  background-color: #388DCB !important; /* Royal Blue */
+}
+.calendar td.ContributionCalendar-day[data-level="3"] rect {
+  fill: #388DCB !important;
+}
+
+/* Level 4 (Darkest Blue) */
+.calendar td.ContributionCalendar-day[data-level="4"] {
+  background-color: #0E5AAB !important; /* Darker Blue */
+}
+.calendar td.ContributionCalendar-day[data-level="4"] rect {
+  fill: #0E5AAB !important;
+}
+
+/* No contributions (Level 0) */
+/* Dark mode "empty" color override */
+.calendar td.ContributionCalendar-day[data-level="0"] {
+  background-color: #161b22 !important; 
+}
+.calendar td.ContributionCalendar-day[data-level="0"] rect {
+  fill: #161b22 !important;
+}
+
+/* Light mode "empty" color override */
+:not(.dark) .calendar td.ContributionCalendar-day[data-level="0"] {
+  background-color: #ebedf0 !important;
+}
+:not(.dark) .calendar td.ContributionCalendar-day[data-level="0"] rect {
+  fill: #ebedf0 !important;
+}
+/*
+ * --- GITHUB LEGEND COLOR OVERRIDES (BLUE PALETTE) ---
+ * Add this to your githubContributions.css file
+ * These target the small squares in the "Less ... More" legend.
+*/
+
+/* Legend - Level 1 (Lightest Blue) */
+div.ContributionCalendar-day[data-level="1"]#contribution-graph-legend-level-1 {
+  background-color: #A7D9F8 !important; /* Light Sky Blue */
+}
+
+/* Legend - Level 2 (Medium Light Blue) */
+div.ContributionCalendar-day[data-level="2"]#contribution-graph-legend-level-2 {
+  background-color: #6DB3E1 !important; /* Medium Blue */
+}
+
+/* Legend - Level 3 (Medium Dark Blue) */
+div.ContributionCalendar-day[data-level="3"]#contribution-graph-legend-level-3 {
+  background-color: #388DCB !important; /* Royal Blue */
+}
+
+/* Legend - Level 4 (Darkest Blue) */
+div.ContributionCalendar-day[data-level="4"]#contribution-graph-legend-level-4 {
+  background-color: #0E5AAB !important; /* Darker Blue */
+}
+
+/* Legend - No contributions (Level 0) */
+/* Dark mode "empty" color override */
+div.ContributionCalendar-day[data-level="0"]#contribution-graph-legend-level-0 {
+  background-color: #161b22 !important; /* GitHub's dark mode default background */
+}
+
+/* Light mode "empty" color override */
+:not(.dark) div.ContributionCalendar-day[data-level="0"]#contribution-graph-legend-level-0 {
+  background-color: #ebedf0 !important; /* GitHub's light mode default background */
+}
+
+/* Style the "Less" and "More" text (optional, makes it consistent) */
+.github-card .color-fg-muted {
+  color: #ffffff; /* White text for dark mode */
+  font-size: 12px;
+}
+
+:not(.dark) .github-card .color-fg-muted {
+  color: #000000; /* Black text for light mode */
+}
