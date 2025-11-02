@@ -100,3 +100,14 @@
     }
   }
   
+  @media screen and (max-width: 640px) {
+  #home-calendar {
+    display: none;
+  }
+
+  .content .btn {
+    display: inline-block;
+    width: auto;
+    margin: 0.5rem 0.3rem;
+  }
+}

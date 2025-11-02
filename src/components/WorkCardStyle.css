@@ -133,3 +133,31 @@
       "c e f";
   }
 }
+@media screen and (max-width: 640px) {
+  .project-heading {
+    font-size: 1.4rem;
+    padding: 2.5rem 0 1.5rem 0;
+  }
+
+  .morph-grid-container {
+    width: 95%;
+    gap: 8px;
+    aspect-ratio: 1 / 1;
+    border-radius: 12px;
+  }
+
+  .project-details-overlay {
+    padding: 1rem 0.8rem;
+  }
+
+  .project-title {
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .project-text {
+    font-size: 0.8rem;
+    -webkit-line-clamp: 2;
+    line-height: 1.3;
+  }
+}
