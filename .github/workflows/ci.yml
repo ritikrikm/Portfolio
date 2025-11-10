@@ -3,8 +3,7 @@ name: Build and Jenkins (GitHub Actions)
 on:
   push:
     branches:
-      - main
-      - master
+      - ritik
   pull_request:
 
 jobs:
