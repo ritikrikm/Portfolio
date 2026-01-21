@@ -1,9 +1,9 @@
-import React, { useRef } from 'react';
-import HTMLFlipBook from 'react-pageflip';
-import './Exp.css';
+import React, { useRef } from "react";
+import HTMLFlipBook from "react-pageflip";
+import "./Exp.css";
 
-import techSaviLor from '../assets/tech.webp';
-import rbcLor from '../assets/rbc.webp';
+import techSaviLor from "../assets/tech.webp";
+import rbcLor from "../assets/rbc.webp";
 
 const experiences = [
   {
@@ -11,13 +11,13 @@ const experiences = [
     title: "Full Stack Developer",
     company: "Tech Savi (Contract - PartTime)",
     location: "Toronto, Canada",
-    date: "January 2025 – June 2025",
+    date: "June 2025 – November 2025",
     points: [
       "Tech Stack: HTML, CSS, JavaScript, ReactJS, Angular, Node.js, Python, Azure, Git, JIRA, Confluence.",
       "Designed and integrated RESTful APIs with Node.js, enabling seamless communication between front-end and back-end services and ensuring scalable system architecture",
       "Automated server provisioning using Ansible, reducing setup time by 50%, and implemented secure user authentication with role-based access control via Azure Active Directory for over 1,000 users.",
       "Streamlined development and deployment processes using GitHub Actions CI/CD, integrating Azure services for database, authentication, and hosting, achieving 99.9% uptime and scalability.",
-    ]
+    ],
   },
   {
     lorImgSrc: rbcLor,
@@ -31,12 +31,12 @@ const experiences = [
       "Helped configure Kubernetes pods and implemented Horizontal Pod Autoscaling and CronJob Scheduling, boosting resource utilization efficiency and application reliability by 85%.",
       "Documented and helped in designing RESTful APIs using Swagger (OpenAPI 3.0) and tested by postman, ensuring clear interface specifications.",
       "Enhanced application performance and scalability by implementing Cache as a Service using Armada and Dynatrace and integrating IVR systems with Omilia to improve customer interaction capabilities.",
-      "Developed robust test cases using JUnit and Mockito, achieving over 55% code coverage on SonarQube and ensuring effective application monitoring with Log4J for improved reliability and quality assurance.", 
+      "Developed robust test cases using JUnit and Mockito, achieving over 55% code coverage on SonarQube and ensuring effective application monitoring with Log4J for improved reliability and quality assurance.",
       "Collaborated with Senior Developers and participated in team knowledge-sharing sessions on Spring Boot and Git workflows.",
-    ]
+    ],
   },
   {
-    lorImgSrc: null, 
+    lorImgSrc: null,
     title: "Software Engineer Intern",
     company: "Frontline VR India Venture",
     location: "Delhi, India",
@@ -46,8 +46,8 @@ const experiences = [
       "Spearheaded the development of a customer-facing platform using ReactJS and MongoDB, achieving rapid growth to 2,000 active users within 3 days of launch.",
       "Conducted rigorous testing using Jest, Postman, and Selenium, ensuring the reliability, functionality, and seamless integration of various components in the platform.",
       "Developed and deployed APIs to enhance integration capabilities and ensure seamless communication between services, improving system scalability by 40%.",
-    ]
-  }
+    ],
+  },
 ];
 
 const Exp = () => {
@@ -90,7 +90,7 @@ const Exp = () => {
                   ))}
                 </ul>
               </div>
-            </div>
+            </div>,
           ])}
         </HTMLFlipBook>
       </div>
